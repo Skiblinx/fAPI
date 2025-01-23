@@ -8,7 +8,6 @@ app = FastAPI()
 class Post(BaseModel):
   title: str
   content: str
-  # The draft field is now optional
   draft: bool = False 
 
 
@@ -42,7 +41,7 @@ async def root():
 @app.post('/posts/create/')
 async def create_post(posts: Post):
   posts_dict = posts.dict()
-  posts_dict['id'] = randrange(0, 1000000000)
+  posts_dict['id'] = randrange(0, 100000000)
   my_posts.append(posts_dict)
 
   return {"data": posts} 
@@ -75,6 +74,3 @@ def update_post(id: int, post: Post):
   my_posts[post_index] = post
 
   return{"message": "Post updated successfully", "data": post}
-
-
-# Stopped video on 01:59:37
