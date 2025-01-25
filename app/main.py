@@ -33,7 +33,7 @@ async def root():
 
 # This is creating a post without any form of validation
 # @app.post('/posts')
-# async def create_post(payload: dict = Body(...) ):
+#  async def create_post(payload: dict = Body(...) ):
 #   print(payload)
 #   return {"new_post": f"title: {payload['title']}, content: {payload['content']}"}
 
